@@ -44,3 +44,7 @@ function mergemp4() {
   if test -f "$outputfile"; then echo "$outputfile created"; fi
 }
 ```
+## mp3 to mp4 with black screen
+```bash
+ffmpeg -f lavfi -i color=c=black:s=1280x720:r=5 -i audio.mp3 -crf 0 -c:a copy -shortest video.mp4
+```
